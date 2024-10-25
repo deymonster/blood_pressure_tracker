@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "blood-pressure-tracker"
+version = "0.1.0"
+description = ""
+authors = ["deymonster <deymonster@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.2"
+psycopg2-binary = "^2.9.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Blood Pressure Statistics</h2>
+  <form method="get">
+    <select name="period" onchange="this.form.submit()">
+      <option value="day" {% if period == 'day' %}selected{% endif %}>Last 24 hours</option>
+      <option value="month" {% if period == 'month' %}selected{% endif %}>Last 30 days</option>
+    </select>
+  </form>
+  {% if records %}
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Systolic</th>
+        <th>Diastolic</th>
+      </tr>
+      {% for record in records %}
+        <tr>
+          <td>{{ record.date }}</td>
+          <td>{{ record.systolic }}</td>
+          <td>{{ record.diastolic }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No records found for the selected period.</p>
+  {% endif %}
+{% endblock %}

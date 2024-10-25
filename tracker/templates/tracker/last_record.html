@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Last Blood Pressure Record</h2>
+  {% if record %}
+    <p>Systolic: {{ record.systolic }}</p>
+    <p>Diastolic: {{ record.diastolic }}</p>
+    <p>Date: {{ record.date }}</p>
+  {% else %}
+    <p>No records found.</p>
+  {% endif %}
+{% endblock %}
